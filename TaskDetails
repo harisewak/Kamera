@@ -1,0 +1,20 @@
+Following TDD :
+Write tests for use-case
+Extend code as required
+There are 3 fundamental use-cases of this app -
+ 1) Get Albums
+ 2) Save Image
+ 3) Get Images in an album
+
+
+1) Saving image :-
+ - Input -> image
+ - Output -> Saved image (success) | error in the process of saving it (failure)
+
+2) Getting albums :-
+ - Input -> None
+ - Output -> List of Albums (first_image, album_id) | error in the process of retrieving them | No albums
+
+3) Get images of an album :-
+ - Input -> album Id
+ - Output -> Images of album | error if album doesn't exist | error in the process of retrieval
