@@ -1,6 +1,5 @@
 package com.harisewak.kamera.save_image_feature
 
-import android.net.Uri
 import com.harisewak.kamera.others.Constants
 
 /*
@@ -15,6 +14,7 @@ class SaveImageUseCase(
 
 
     suspend fun saveImage(imageUri: String): String {
+
         if (!imageUri.startsWith(Constants.CONTENT_SCHEMA)) {
             return Constants.MSG_INVALID_IMAGE_URI
         }

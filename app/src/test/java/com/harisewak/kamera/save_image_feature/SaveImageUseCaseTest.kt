@@ -26,7 +26,11 @@ class SaveImageUseCaseTest {
 
     @Test
     fun `returns error when operation is not successful`() = mainCoroutineRule.runBlockingTest {
-        // todo implement this after mocking repository and testing the written tests
+        val repository = mock(SaveImageRepository::class.java)
+        val imageUri = "content://media/external/images/media/33"
+        `when`(repository.saveImage(imageUri)).thenReturn(Constants.MSG_SAVING_IMAGE_FAILED)
+
+        assertThat(SaveImageUseCase(repository).saveImage(imageUri)).isEqualTo(Constants.MSG_SAVING_IMAGE_FAILED)
     }
 
     @Test
