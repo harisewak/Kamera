@@ -9,7 +9,9 @@ import com.harisewak.kamera.others.Constants
  - Output -> Saved image (success) | error in the process of saving it (failure)
 * */
 
-class SaveImageUseCase {
+class SaveImageUseCase(
+    val repository: SaveImageRepository
+) {
 
 
     suspend fun saveImage(imageUri: String): String {
@@ -17,6 +19,7 @@ class SaveImageUseCase {
             return Constants.MSG_INVALID_IMAGE_URI
         }
 
-        return ""
+
+        return repository.saveImage(imageUri)
     }
 }
