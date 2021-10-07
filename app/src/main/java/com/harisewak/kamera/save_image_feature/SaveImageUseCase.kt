@@ -1,6 +1,9 @@
 package com.harisewak.kamera.save_image_feature
 
 import com.harisewak.kamera.others.Constants
+import com.harisewak.kamera.others.Failure
+import com.harisewak.kamera.others.SaveImageResponse
+import com.harisewak.kamera.others.Success
 
 /*
 * Saving image :-
@@ -13,13 +16,13 @@ class SaveImageUseCase(
 ) {
 
 
-    suspend fun saveImage(imageUri: String): String {
+    suspend fun saveImage(imageUri: String): SaveImageResponse {
 
         if (!imageUri.startsWith(Constants.CONTENT_SCHEMA)) {
-            return Constants.MSG_INVALID_IMAGE_URI
+            return Failure(Constants.MSG_INVALID_IMAGE_URI)
         }
 
 
-        return repository.saveImage(imageUri)
+        return Success(repository.saveImage(imageUri))
     }
 }
