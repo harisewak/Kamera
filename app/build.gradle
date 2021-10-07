@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -43,6 +45,10 @@ dependencies {
 
     // coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // dependency injection
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     testImplementation 'junit:junit:4.13.2'
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
