@@ -23,6 +23,6 @@ class SaveImageUseCase(
         }
 
 
-        return Success(repository.saveImage(imageUri))
+        return repository.saveImage(imageUri)
     }
 }
