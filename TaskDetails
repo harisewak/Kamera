@@ -1,15 +1,15 @@
 
  Workflow :-
- UseCase <-
- Repository
+ UseCase
+ Repository <-
  ViewModel
  Fragment
  constructing UI
  implementing behaviour
 
 
- --> UseCase
-      return output as Response
-      Response can be Success(imageUri) or Failure(message)
-      update tests
-      Inject repository
+ --> Repository
+ receive imageUri
+ check if album exists
+ Yes -> save imageUri in that album
+ No -> create a new album and save image in it
