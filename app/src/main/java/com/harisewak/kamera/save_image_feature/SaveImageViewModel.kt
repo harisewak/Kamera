@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SaveImageViewModel @Inject constructor(
-    val useCase: SaveImageUseCase
+    private val useCase: SaveImageUseCase
 ) : ViewModel() {
 
     suspend fun saveImage(imageUri: String) = useCase.saveImage(imageUri)

@@ -12,13 +12,12 @@ import com.harisewak.kamera.others.Success
 import java.lang.Exception
 import javax.inject.Inject
 
-const val TAG = "SaveImageRepo"
-
 class SaveImageRepositoryImpl @Inject constructor(
     private val albumDao: AlbumDao,
     private val imageDao: ImageDao
 ) : SaveImageRepository {
     private var albumId = -1L
+    private val TAG = "SaveImageRepo"
 
     override suspend fun saveImage(imageUri: String): SaveImageResponse {
         return try {

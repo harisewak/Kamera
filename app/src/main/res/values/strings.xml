@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Kamera</string>
-    <string name="camera_permissions_required">Camera permission is necessary for the working of this app</string>
+    <string name="camera_permission_required">Camera permission is necessary for the working of this app</string>
     <string name="btn_take_photo">Take Photo</string>
     <string name="content_des_image_preview">Image preview</string>
+    <string name="msg_image_capture_failed">Something went wrong while taking picture</string>
 </resources>

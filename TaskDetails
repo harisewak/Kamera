@@ -5,12 +5,14 @@
  ViewModel
  Fragment
  constructing UI
- initializing navigation components <-
- implementing behaviour
+ initializing navigation components
+ implementing behaviour <-
 
 
- --> Camera surface, Take photo button, prev image thumbnail
-
+ -->
+ Enable camera functionality
+ Activate image saving functionality
+ Implement thumbnail of taken image
 
 
 
