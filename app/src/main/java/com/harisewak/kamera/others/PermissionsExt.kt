@@ -35,7 +35,7 @@ fun handleRequestPermissionsResult(
     onPermissionGranted: () -> Unit,
     showPermissionRequired: () -> Unit
 ) {
-    if (requestCode == permReqCode ||
+    if (requestCode == permReqCode &&
         grantResults[0] == PackageManager.PERMISSION_GRANTED
     ) {
         onPermissionGranted()

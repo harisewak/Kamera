@@ -1,5 +1,7 @@
 package com.harisewak.kamera.di
 
+import com.harisewak.kamera.data.AlbumDao
+import com.harisewak.kamera.data.ImageDao
 import com.harisewak.kamera.save_image_feature.SaveImageRepository
 import com.harisewak.kamera.save_image_feature.SaveImageRepositoryImpl
 import dagger.Module
@@ -17,7 +19,12 @@ object SaveImageModule {
 
     @Provides
     @ViewModelScoped
-    fun provideRepository(): SaveImageRepository = SaveImageRepositoryImpl()
+    fun provideRepository(
+        albumDao: AlbumDao,
+        imageDao: ImageDao
+    ): SaveImageRepository = SaveImageRepositoryImpl(
+        albumDao, imageDao
+    )
 
 
 }

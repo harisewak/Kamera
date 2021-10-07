@@ -4,8 +4,8 @@
  Repository
  ViewModel
  Fragment
- constructing UI <-
- initializing navigation components
+ constructing UI
+ initializing navigation components <-
  implementing behaviour
 
 

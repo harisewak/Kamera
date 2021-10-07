@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.harisewak.kamera.R
+import com.harisewak.kamera.databinding.FragmentSaveImageBinding
 import com.harisewak.kamera.others.handleRequestPermissionsResult
 import com.harisewak.kamera.others.isCameraPermissionGranted
 import com.harisewak.kamera.others.requestCameraPermission
@@ -15,15 +16,21 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SaveImageFragment: Fragment() {
+    private lateinit var binding : FragmentSaveImageBinding
+
     private val viewModel: SaveImageViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // todo write inflate code
-        return super.onCreateView(inflater, container, savedInstanceState)
+    ): View {
+        binding = FragmentSaveImageBinding.inflate(
+            inflater,
+            container,
+            false
+        )
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,6 +40,14 @@ class SaveImageFragment: Fragment() {
             // todo initialize camera and other components
         } else {
             requestCameraPermission()
+        }
+
+        binding.btTakePhoto.setOnClickListener {
+            if (isCameraPermissionGranted()) {
+                // todo initialize camera and other components
+            } else {
+                requestCameraPermission()
+            }
         }
     }
 
