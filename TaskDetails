@@ -1,15 +1,12 @@
 
  Workflow :-
  UseCase
- Repository <-
+ Repository
  ViewModel
- Fragment
+ Fragment <-
  constructing UI
  implementing behaviour
 
 
- --> Repository
- receive imageUri
- check if album exists
- Yes -> save imageUri in that album
- No -> create a new album and save image in it
+
+
