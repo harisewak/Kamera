@@ -3,9 +3,13 @@
  UseCase
  Repository
  ViewModel
- Fragment <-
- constructing UI
+ Fragment
+ constructing UI <-
+ initializing navigation components
  implementing behaviour
+
+
+ --> Camera surface, Take photo button, prev image thumbnail
 
 
 
