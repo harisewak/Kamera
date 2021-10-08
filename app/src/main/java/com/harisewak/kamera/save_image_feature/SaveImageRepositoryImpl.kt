@@ -6,10 +6,7 @@ import com.harisewak.kamera.data.AlbumDao
 import com.harisewak.kamera.data.Image
 import com.harisewak.kamera.data.ImageDao
 import com.harisewak.kamera.others.Constants
-import com.harisewak.kamera.others.Failure
 import com.harisewak.kamera.others.SaveImageResponse
-import com.harisewak.kamera.others.Success
-import java.lang.Exception
 import javax.inject.Inject
 
 class SaveImageRepositoryImpl @Inject constructor(
@@ -41,10 +38,10 @@ class SaveImageRepositoryImpl @Inject constructor(
                 imageDao.insert(newImage)
             }
 
-            return Success(imageUri)
+            return SaveImageResponse.Success(imageUri)
         } catch (error: Exception) {
             Log.d(TAG, "saveImage: ${error.localizedMessage}")
-            Failure(Constants.MSG_SAVING_IMAGE_FAILED)
+            SaveImageResponse.Failure(Constants.MSG_SAVING_IMAGE_FAILED)
         }
     }
 

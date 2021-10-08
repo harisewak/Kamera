@@ -88,10 +88,10 @@ class SaveImageFragment : Fragment() {
 
                         if (isVisible) {
                             when (response) {
-                                is Success -> {
+                                is SaveImageResponse.Success -> {
                                     binding.ivPreview.setImageURI(Uri.parse(response.uri))
                                 }
-                                is Failure -> {
+                                is SaveImageResponse.Failure -> {
                                     binding.root.showSnackbar(response.message)
                                 }
                             }

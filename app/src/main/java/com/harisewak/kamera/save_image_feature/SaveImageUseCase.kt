@@ -1,7 +1,6 @@
 package com.harisewak.kamera.save_image_feature
 
 import com.harisewak.kamera.others.Constants
-import com.harisewak.kamera.others.Failure
 import com.harisewak.kamera.others.SaveImageResponse
 import javax.inject.Inject
 
@@ -19,7 +18,7 @@ class SaveImageUseCase @Inject constructor(
     suspend fun saveImage(imageUri: String): SaveImageResponse {
 
         if (!imageUri.startsWith(Constants.CONTENT_SCHEMA)) {
-            return Failure(Constants.MSG_INVALID_IMAGE_URI)
+            return SaveImageResponse.Failure(Constants.MSG_INVALID_IMAGE_URI)
         }
 
 

@@ -2,9 +2,8 @@ package com.harisewak.kamera.save_image_feature
 
 import com.google.common.truth.Truth.assertThat
 import com.harisewak.kamera.others.Constants
-import com.harisewak.kamera.others.Failure
 import com.harisewak.kamera.others.MainCoroutineRule
-import com.harisewak.kamera.others.Success
+import com.harisewak.kamera.others.SaveImageResponse
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Rule
@@ -31,7 +30,7 @@ class SaveImageUseCaseTest {
         val repository = mock(SaveImageRepository::class.java)
         val imageUri = "content://media/external/images/media/33"
 
-        `when`(repository.saveImage(imageUri)).thenReturn(Failure(Constants.MSG_SAVING_IMAGE_FAILED))
+        `when`(repository.saveImage(imageUri)).thenReturn(SaveImageResponse.Failure(Constants.MSG_SAVING_IMAGE_FAILED))
 
         val response = SaveImageUseCase(repository).saveImage(imageUri)
 
@@ -44,7 +43,7 @@ class SaveImageUseCaseTest {
             val validUri = "content://media/external/images/media/33"
 
             val repository = mock(SaveImageRepository::class.java)
-            `when`(repository.saveImage(validUri)).thenReturn(Success(validUri))
+            `when`(repository.saveImage(validUri)).thenReturn(SaveImageResponse.Success(validUri))
 
             val response = SaveImageUseCase(repository).saveImage(validUri)
 
