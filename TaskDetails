@@ -1,41 +1,7 @@
-Get images of an album :-
- - Input -> album Id
- - Output -> Images of album | error if album doesn't exist | error in the process of retrieval
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Improvements :
- - What if image is deleted from gallery?
+Images Screen -
+ If error occurs display in ui
+ If no images exist, display in ui
+ If images are available, show in ui
+ Images must be full size
+ Images are changed by swiping (left -> next, right -> prev.)
+ Show current image index/total image count
