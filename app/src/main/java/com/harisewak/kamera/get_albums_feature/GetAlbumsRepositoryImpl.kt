@@ -17,11 +17,6 @@ class GetAlbumsRepositoryImpl @Inject constructor(
     override suspend fun getAlbums(): GetAlbumsResponse {
         return try {
             val albums = albumDao.getAll()
-            if (albums.isEmpty()) {
-                GetAlbumsResponse.Failure(
-                    message = Constants.MSG_ALBUMS_NOT_FOUND
-                )
-            }
             GetAlbumsResponse.Success(albums = albums)
         } catch (error: Exception) {
             Log.d(TAG, "getAlbums: ${error.localizedMessage}")
