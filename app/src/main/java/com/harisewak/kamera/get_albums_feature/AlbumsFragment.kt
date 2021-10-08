@@ -61,6 +61,13 @@ class AlbumsFragment : Fragment() {
         }
     }
 
+    // todo :- this a hack to update albums when user returns from Camera screen (after taking pictures).
+    //  Find a better way to implement this behaviour.
+    override fun onStart() {
+        super.onStart()
+        viewModel.getAlbums()
+    }
+
     private fun observeData() {
         viewModel.albums.observe(viewLifecycleOwner) { response ->
 
