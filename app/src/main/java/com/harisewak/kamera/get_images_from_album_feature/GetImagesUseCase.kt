@@ -7,7 +7,7 @@ class GetImagesUseCase(
 ) {
 
 
-    fun getImages(albumId: Int): List<Image> {
+    fun getImages(albumId: Long): GetImagesResponse {
 
 
         return repository.getImages(albumId)
