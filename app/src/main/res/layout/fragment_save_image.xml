@@ -36,7 +36,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/bt_take_photo"
             app:layout_constraintTop_toTopOf="@+id/bt_take_photo"
-            app:srcCompat="@android:color/darker_gray" />
+            app:srcCompat="@android:color/darker_gray"
+            android:visibility="gone"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

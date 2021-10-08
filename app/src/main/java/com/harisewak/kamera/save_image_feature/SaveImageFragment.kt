@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import coil.load
 import com.harisewak.kamera.R
 import com.harisewak.kamera.databinding.FragmentSaveImageBinding
 import com.harisewak.kamera.others.*
@@ -103,7 +104,12 @@ class SaveImageFragment : Fragment() {
                         if (isVisible) {
                             when (response) {
                                 is SaveImageResponse.Success -> {
-                                    binding.ivPreview.setImageURI(Uri.parse(response.uri))
+                                    binding.ivPreview.visibility = View.VISIBLE
+                                    binding.ivPreview.load(
+                                        Uri.parse(response.uri)
+                                    ) {
+                                        crossfade(true)
+                                    }
                                 }
                                 is SaveImageResponse.Failure -> {
                                     binding.root.showSnackbar(response.message)

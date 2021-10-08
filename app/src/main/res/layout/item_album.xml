@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/size_album_view">
+    android:layout_height="@dimen/size_album_view"
+    android:layout_margin="@dimen/margin_8dp">
 
-    <ImageView
-        android:id="@+id/iv_first_image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_8dp"
-        app:srcCompat="@drawable/im_default_image"
-        android:contentDescription="@string/content_des_first_image_of_album" />
+        <ImageView
+            android:id="@+id/iv_first_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/content_des_first_image_of_album"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/im_default_image" />
 
-    <ImageView
-        android:id="@+id/iv_multiple"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/margin_8dp"
-        app:srcCompat="@drawable/ic_multiple_images"
-        android:contentDescription="@string/content_des_icon_to_indicate_multiple_images_in_album" />
+        <!-- Not using iv_multiple due to time constraints -->
+        <ImageView
+            android:id="@+id/iv_multiple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/margin_8dp"
+            android:contentDescription="@string/content_des_icon_to_indicate_multiple_images_in_album"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_multiple_images" />
 
-</FrameLayout>
+</com.google.android.material.card.MaterialCardView>

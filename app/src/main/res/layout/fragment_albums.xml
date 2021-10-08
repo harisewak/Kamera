@@ -10,7 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Error occurred"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_8dp"
+        android:gravity="center"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_albums"
@@ -21,7 +24,7 @@
         tools:listitem="@layout/item_album"
         />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +32,10 @@
         android:background="@android:color/background_light"
         android:padding="8dp"
         android:layout_gravity="bottom|center_horizontal"
-        android:contentDescription="@string/content_des_camera_icon" />
+        android:contentDescription="@string/content_des_camera_icon"
+        android:elevation="2dp"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        />
 
 
 </FrameLayout>
