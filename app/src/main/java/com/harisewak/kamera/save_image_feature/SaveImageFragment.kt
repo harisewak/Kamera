@@ -57,6 +57,12 @@ class SaveImageFragment : Fragment() {
             requestCameraPermission()
         }
 
+        setClickListeners()
+
+    }
+
+    private fun setClickListeners() {
+
         binding.btTakePhoto.setOnClickListener {
             if (isCameraPermissionGranted()) {
                 takePhoto()
@@ -73,11 +79,11 @@ class SaveImageFragment : Fragment() {
                 .navigate(
                     SaveImageFragmentDirections
                         .actionSaveImageFragmentToImagesFragment(
-                            albumId = previewImage.albumId
+                            albumId = previewImage.albumId,
+                            imageId = previewImage.id!!
                         )
                 )
         }
-
     }
 
     private fun takePhoto() {

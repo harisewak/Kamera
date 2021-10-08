@@ -29,14 +29,14 @@ class SaveImageRepositoryImpl @Inject constructor(
                     imageUri = imageUri,
                     albumId = albumId
                 )
-                imageDao.insert(curImage)
+                curImage.id = imageDao.insert(curImage)
             } else {
                 // save imageUri in existing album
                 curImage = Image(
                     imageUri = imageUri,
                     albumId = albumId
                 )
-                imageDao.insert(curImage)
+                curImage.id = imageDao.insert(curImage)
             }
 
             return SaveImageResponse.Success(imageUri)

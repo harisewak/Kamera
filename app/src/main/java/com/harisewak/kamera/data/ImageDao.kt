@@ -15,6 +15,6 @@ interface ImageDao {
     suspend fun getAll(albumId: Long): List<Image>
 
     @Insert
-    suspend fun insert(image: Image)
+    suspend fun insert(image: Image): Long
 
 }
