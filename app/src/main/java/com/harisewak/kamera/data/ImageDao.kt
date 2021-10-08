@@ -12,7 +12,7 @@ interface ImageDao {
                 FROM image
                 where albumId=:albumId
                 """)
-    suspend fun getAll(albumId: Int): List<Image>
+    suspend fun getAll(albumId: Long): List<Image>
 
     @Insert
     suspend fun insert(image: Image)

@@ -1,4 +1,4 @@
-package com.harisewak.kamera.di
+package com.harisewak.kamera.save_image_feature
 
 import com.harisewak.kamera.data.AlbumDao
 import com.harisewak.kamera.data.ImageDao
