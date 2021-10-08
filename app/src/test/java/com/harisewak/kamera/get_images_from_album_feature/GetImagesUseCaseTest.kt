@@ -14,6 +14,19 @@ class GetImagesUseCaseTest {
     * ...returns empty list if no images are present in the album */
 
     @Test
+    fun `returns empty list if no images are present in the album`() {
+        val repository = Mockito.mock(GetImagesRepository::class.java)
+        val albumId = 1L
+        `when`(repository.getImages(albumId)).thenReturn(
+            GetImagesResponse.Success(
+                images = listOf<Image>()
+            )
+        )
+        val images = GetImagesUseCase(repository).getImages(albumId).images
+        assertThat(images).isEmpty()
+    }
+
+    @Test
     fun `images are returned when correct albumId is provided`() {
         val repository = Mockito.mock(GetImagesRepository::class.java)
         val albumId = 1L
