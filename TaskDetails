@@ -1,18 +1,41 @@
-
- Workflow :-
- UseCase
- Repository
- ViewModel
- Fragment
- constructing UI
- initializing navigation components
- implementing behaviour <-
-
-
- -->
- Enable camera functionality
- Activate image saving functionality
- Implement thumbnail of taken image
+Get images of an album :-
+ - Input -> album Id
+ - Output -> Images of album | error if album doesn't exist | error in the process of retrieval
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Improvements :
+ - What if image is deleted from gallery?
