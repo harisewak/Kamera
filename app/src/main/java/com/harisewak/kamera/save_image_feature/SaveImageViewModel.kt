@@ -10,4 +10,5 @@ class SaveImageViewModel @Inject constructor(
 ) : ViewModel() {
 
     suspend fun saveImage(imageUri: String) = useCase.saveImage(imageUri)
+    fun getPreviewImage() = useCase.getPreviewImage()
 }

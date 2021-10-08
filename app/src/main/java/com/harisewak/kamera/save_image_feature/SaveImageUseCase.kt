@@ -24,4 +24,6 @@ class SaveImageUseCase @Inject constructor(
 
         return repository.saveImage(imageUri)
     }
+
+    fun getPreviewImage() = repository.getPreviewImage()
 }

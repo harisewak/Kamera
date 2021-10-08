@@ -7,5 +7,26 @@
     <fragment
         android:id="@+id/saveImageFragment"
         android:name="com.harisewak.kamera.save_image_feature.SaveImageFragment"
-        android:label="SaveImageFragment" />
+        android:label="SaveImageFragment">
+        <action
+            android:id="@+id/action_saveImageFragment_to_imagesFragment"
+            app:destination="@id/imagesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imagesFragment"
+        android:name="com.harisewak.kamera.get_images_from_album_feature.ImagesFragment"
+        android:label="ImagesFragment">
+        <argument
+            android:name="album_id"
+            android:defaultValue="-1L"
+            app:argType="long"
+            app:nullable="false" />
+        <argument
+            android:name="image_id"
+            android:defaultValue="-1L"
+            app:argType="long"
+            app:nullable="false" />
+
+    </fragment>
 </navigation>

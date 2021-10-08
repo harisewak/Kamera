@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.harisewak.kamera.R
 import com.harisewak.kamera.databinding.FragmentSaveImageBinding
 import com.harisewak.kamera.others.*
@@ -61,6 +62,19 @@ class SaveImageFragment : Fragment() {
             } else {
                 requestCameraPermission()
             }
+        }
+
+        binding.ivPreview.setOnClickListener {
+            // get album Id & image Id
+            val previewImage = viewModel.getPreviewImage()
+            // pass both of these to Images screen
+            findNavController()
+                .navigate(
+                    SaveImageFragmentDirections
+                        .actionSaveImageFragmentToImagesFragment(
+                            albumId = previewImage.albumId
+                        )
+                )
         }
 
     }

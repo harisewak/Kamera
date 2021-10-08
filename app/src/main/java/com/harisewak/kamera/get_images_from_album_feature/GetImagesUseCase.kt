@@ -1,8 +1,8 @@
 package com.harisewak.kamera.get_images_from_album_feature
 
-import com.harisewak.kamera.data.Image
+import javax.inject.Inject
 
-class GetImagesUseCase(
+class GetImagesUseCase @Inject constructor(
     private val repository: GetImagesRepository
 ) {
 

@@ -15,6 +15,7 @@ class SaveImageRepositoryImpl @Inject constructor(
 ) : SaveImageRepository {
     private var albumId = -1L
     private val TAG = "SaveImageRepo"
+    private lateinit var curImage: Image
 
     override suspend fun saveImage(imageUri: String): SaveImageResponse {
         return try {
@@ -24,18 +25,18 @@ class SaveImageRepositoryImpl @Inject constructor(
                     firstImageUri = imageUri
                 )
                 albumId = albumDao.insert(newAlbum)
-                val newImage = Image(
+                curImage = Image(
                     imageUri = imageUri,
                     albumId = albumId
                 )
-                imageDao.insert(newImage)
+                imageDao.insert(curImage)
             } else {
                 // save imageUri in existing album
-                val newImage = Image(
+                curImage = Image(
                     imageUri = imageUri,
                     albumId = albumId
                 )
-                imageDao.insert(newImage)
+                imageDao.insert(curImage)
             }
 
             return SaveImageResponse.Success(imageUri)
@@ -44,5 +45,7 @@ class SaveImageRepositoryImpl @Inject constructor(
             SaveImageResponse.Failure(Constants.MSG_SAVING_IMAGE_FAILED)
         }
     }
+
+    override fun getPreviewImage() = curImage
 
 }

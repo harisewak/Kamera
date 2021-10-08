@@ -1,7 +1,7 @@
-Images Screen -
- If error occurs display in ui
- If no images exist, display in ui
- If images are available, show in ui
- Images must be full size
- Images are changed by swiping (left -> next, right -> prev.)
- Show current image index/total image count
+navigation logic
+display logic <-
+
+
+ -->
+create adapter
+load image in item view
