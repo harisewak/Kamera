@@ -4,6 +4,6 @@ import com.harisewak.kamera.data.Image
 
 interface GetImagesRepository {
 
-    fun getImages(albumId: Long): GetImagesResponse
+    suspend fun getImages(albumId: Long): GetImagesResponse
 
 }

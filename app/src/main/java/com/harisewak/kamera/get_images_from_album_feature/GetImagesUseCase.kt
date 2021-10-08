@@ -6,11 +6,6 @@ class GetImagesUseCase(
     private val repository: GetImagesRepository
 ) {
 
-
-    fun getImages(albumId: Long): GetImagesResponse {
-
-
-        return repository.getImages(albumId)
-    }
+    suspend fun getImages(albumId: Long) = repository.getImages(albumId)
 
 }

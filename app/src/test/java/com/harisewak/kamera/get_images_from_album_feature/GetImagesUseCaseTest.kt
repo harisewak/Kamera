@@ -3,18 +3,23 @@ package com.harisewak.kamera.get_images_from_album_feature
 import com.google.common.truth.Truth.assertThat
 import com.harisewak.kamera.data.Image
 import com.harisewak.kamera.others.Constants
+import com.harisewak.kamera.others.MainCoroutineRule
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runBlockingTest
+import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito
 import org.mockito.Mockito.`when`
 
+@ExperimentalCoroutinesApi
 class GetImagesUseCaseTest {
-    /* Test if...
-    * ...images are returned when correct albumId is provided
-    * ...fails when invalid albumId is provided
-    * ...returns empty list if no images are present in the album */
+
+
+    @get:Rule
+    var mainCoroutineRule = MainCoroutineRule()
 
     @Test
-    fun `returns empty list if no images are present in the album`() {
+    fun `returns empty list if no images are present in the album`() = runBlockingTest {
         val repository = Mockito.mock(GetImagesRepository::class.java)
         val albumId = 1L
         `when`(repository.getImages(albumId)).thenReturn(
@@ -27,7 +32,7 @@ class GetImagesUseCaseTest {
     }
 
     @Test
-    fun `images are returned when correct albumId is provided`() {
+    fun `images are returned when correct albumId is provided`() = runBlockingTest {
         val repository = Mockito.mock(GetImagesRepository::class.java)
         val albumId = 1L
         `when`(repository.getImages(albumId)).thenReturn(
@@ -42,7 +47,7 @@ class GetImagesUseCaseTest {
     }
 
     @Test
-    fun `fails when invalid albumId is provided`() {
+    fun `fails when invalid albumId is provided`() = runBlockingTest {
         val repository = Mockito.mock(GetImagesRepository::class.java)
         val albumId = -1L
         `when`(repository.getImages(albumId)).thenReturn(GetImagesResponse.Failure(Constants.MSG_INVALID_ALBUM_ID_PROVIDED))
