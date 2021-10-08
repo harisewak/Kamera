@@ -4,6 +4,7 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.harisewak.kamera.data.Image
 import com.harisewak.kamera.databinding.ItemImageBinding
 
@@ -32,6 +33,8 @@ class ImageViewHolder(private val binding: ItemImageBinding) : RecyclerView.View
 ) {
 
     fun bind(image: Image) {
-        binding.root.setImageURI(Uri.parse(image.imageUri))
+        binding.root.load(Uri.parse(image.imageUri)) {
+            crossfade(true)
+        }
     }
 }

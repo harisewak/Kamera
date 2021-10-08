@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/saveImageFragment">
+    app:startDestination="@id/albumsFragment">
 
     <fragment
         android:id="@+id/saveImageFragment"
@@ -28,5 +28,16 @@
             app:argType="long"
             app:nullable="false" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.harisewak.kamera.get_albums_feature.AlbumsFragment"
+        android:label="AlbumsFragment" >
+        <action
+            android:id="@+id/action_albumsFragment_to_saveImageFragment"
+            app:destination="@id/saveImageFragment" />
+        <action
+            android:id="@+id/action_albumsFragment_to_imagesFragment"
+            app:destination="@id/imagesFragment" />
     </fragment>
 </navigation>

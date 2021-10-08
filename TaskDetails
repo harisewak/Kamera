@@ -1,7 +1,12 @@
-navigation logic
-display logic <-
 
-
- -->
-create adapter
-load image in item view
+ // remaining bugs/tasks
+ - display albums in adapter
+ - update navigation graph
+ - add click to an album
+ - add option to open camera
+ - add image count in album <-
+ - display current image in Preview screen
+ - check reasons for UI lag (move coroutines to different thread, if needed)
+ - check app in diff orientations
+ - show image index
+ - preview thumbnail show/hide logic

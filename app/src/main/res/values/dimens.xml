@@ -4,4 +4,5 @@
     <dimen name="margin_48dp">48dp</dimen>
     <dimen name="margin_8dp">8dp</dimen>
     <dimen name="size_thumbnail">96dp</dimen>
+    <dimen name="size_album_view">160dp</dimen>
 </resources>

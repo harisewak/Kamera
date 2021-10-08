@@ -17,7 +17,11 @@ class GetAlbumsViewModel @Inject constructor(
     private val _albums = MutableLiveData<GetAlbumsResponse>()
     val albums = _albums
 
-    fun getAlbums() {
+    init {
+        getAlbums()
+    }
+
+    private fun getAlbums() {
         viewModelScope.launch(Dispatchers.IO) {
             _albums.postValue(useCase.getAlbums())
         }

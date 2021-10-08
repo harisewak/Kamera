@@ -7,4 +7,8 @@
     <string name="content_des_image">image</string>
     <string name="msg_album_id_invalid">Something went wrong while loading this album</string>
     <string name="msg_no_images_in_album">This album does not have any images</string>
+    <string name="content_des_camera_icon">camera icon</string>
+    <string name="msg_no_albums">No albums. Its empty here. Click the camera icon to hide me</string>
+    <string name="content_des_first_image_of_album">first image of album</string>
+    <string name="content_des_icon_to_indicate_multiple_images_in_album">icon to indicate multiple images in album</string>
 </resources>
